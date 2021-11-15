@@ -1,0 +1,74 @@
+
+
+<div *ngIf="!pais; else divPais"  
+    class="alert alert-info">
+    Espere por favor...
+</div>
+
+
+
+<ng-template #divPais>
+
+    <div *ngFor="let pais of pais; let i = index">
+      <div class="container">
+        <div class="row">
+          <h2>Nombre del pais: {{pais.name.common}}</h2>
+        
+          <hr>
+
+          <div class="col-6">
+            <h3>La bandera del pais {{pais.name.common}}</h3>
+            <img class="small-flag-dos" [src]="pais.flags.png" >
+          </div>
+
+          <div class="col-6">
+            <div class="card">
+                <div class="row">
+                    <div class="card-header">
+                        <div class="row">
+                            <div class="col-6">
+                                <h3>Esta es la informacion. </h3>
+                            </div>
+                            
+                            <div class="col-6">
+                                <img class="small-flag-tres" [src]="pais.flags.png" >
+                            </div>
+                            
+                        </div>
+                        
+                        
+                    </div>
+                </div>
+              
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-6">
+                            <h5>La capital es:  </h5>
+                            <hr>
+                            <h5>Su Region es:  </h5>
+                            <hr>
+                            <h5>Su poblacion es: </h5>
+                        </div>
+                        <div class="col-6">
+                            <h5>{{pais.capital}} </h5>
+                            <hr>
+                            <h5>{{pais.region}} </h5>
+                            <hr>
+                            <h5>{{pais.population}}</h5>
+                        </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+</ng-template>
+
+<!--<p style="width: 300px; height: 50px;">
+    {{ pais | json }}
+</p> -->
+
